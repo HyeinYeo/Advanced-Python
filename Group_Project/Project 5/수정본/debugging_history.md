@@ -56,6 +56,15 @@
 </div>
 </details>
 
+<details>
+  <summary>코드 보기</summary>
+
+  ```python
+  def hello_world():
+      print("Hello, World!")
+</details>
+```
+
 ### 문제사항
 - item.discount = discount가 0~100 사이 정수 판단하는 조건문 **전**에 있어서 100 이상의 정수가 입력됐을 때 그대로 할인율로 적용되는 문제가 있었음.
 
