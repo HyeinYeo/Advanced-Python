@@ -1,26 +1,3 @@
-### 수정 전
-```python
-# 할인 이벤트 생성
-    def make_discount(self):
-      #...
-        # 할인율 적용하기
-        discount = input('적용할 할인율(0% ~ 100%): ')
-        try:
-            int(discount)
-        except ValueError:
-            print('0 ~ 100 사이의 정수만 입력 가능합니다.')
-            return self.make_discount()
-        if int(discount) < 0 or int(discount) > 100:            # 여기부터
-            print('0 ~ 100 사이의 정수만 입력 가능합니다.')
-            return self.make_discount()
-        item.discount = discount                                # 여기까지
-        
-        # 할인율 적용 완료
-        discount_price = item.prime_cost * (1 - (item.discount * 0.01))
-        item.price = int(discount_price)
-        print(f"'{item.name}' 상품에 {discount}% 할인율이 적용 완료되었습니다.")
-
-```
 ```python
 # 할인 이벤트 생성
     def make_discount(self):
@@ -47,10 +24,7 @@
 <summary>수정 전</summary>
 <div markdown="1">
 ```python
-    item.discount = int(discount)
-    if item.discount < 0 or item.discount > 100:           
-          print('0 ~ 100 사이의 정수만 입력 가능합니다.')
-          return self.make_discount()
+    
 ```
 
 </div>
@@ -60,11 +34,27 @@
   <summary>코드 보기</summary>
 
   ```python
-  def hello_world():
-      print("Hello, World!")
-</details>
+  # 할인 이벤트 생성
+    def make_discount(self):
+      #...
+        # 할인율 적용하기
+        discount = input('적용할 할인율(0% ~ 100%): ')
+        try:
+            int(discount)
+        except ValueError:
+            print('0 ~ 100 사이의 정수만 입력 가능합니다.')
+            return self.make_discount()
+        item.discount = int(discount)                            # 여기부터
+        if item.discount < 0 or item.discount > 100:           
+          print('0 ~ 100 사이의 정수만 입력 가능합니다.')
+          return self.make_discount()                            # 여기까지
+        
+        # 할인율 적용 완료
+        discount_price = item.prime_cost * (1 - (item.discount * 0.01))
+        item.price = int(discount_price)
+        print(f"'{item.name}' 상품에 {discount}% 할인율이 적용 완료되었습니다.")
 ```
-
+</details>
 ### 문제사항
 - item.discount = discount가 0~100 사이 정수 판단하는 조건문 **전**에 있어서 100 이상의 정수가 입력됐을 때 그대로 할인율로 적용되는 문제가 있었음.
 
