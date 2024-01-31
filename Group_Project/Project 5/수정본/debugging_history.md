@@ -21,17 +21,7 @@
 
 ```
 <details>
-<summary>수정 전</summary>
-<div markdown="1">
-```python
-    
-```
-
-</div>
-</details>
-
-<details>
-  <summary>코드 보기</summary>
+  <summary> 수정 전 코드 보기</summary>
 
   ```python
   # 할인 이벤트 생성
@@ -55,6 +45,7 @@
         print(f"'{item.name}' 상품에 {discount}% 할인율이 적용 완료되었습니다.")
 ```
 </details>
+
 ### 문제사항
 - item.discount = discount가 0~100 사이 정수 판단하는 조건문 **전**에 있어서 100 이상의 정수가 입력됐을 때 그대로 할인율로 적용되는 문제가 있었음.
 
